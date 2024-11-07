@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, TouchableHighlight } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Ionicons from '@expo/vector-icons/Ionicons';
+import theme from "../../../config/theme";
 
 const styles = StyleSheet.create({
     touchWrapper: {
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 10,
         margin: 4,
-        backgroundColor: '#F3E7C9',
+        backgroundColor: theme.items,
     },
     author: {
         width: '30%',
