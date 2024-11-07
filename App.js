@@ -1,20 +1,55 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// Screens and components imports
+import HomeScreen from './screens/HomeScreen/HomeScreen';
+import BorrowedScreen from './screens/BorrowedScreen/BorrowedScreen';
+
+// Navigation imports
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+
+// Styling imports
+import Ionicons from '@expo/vector-icons/Ionicons';
+
 
 export default function App() {
+  
+  const Tab = createBottomTabNavigator()
+
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Tab.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          headerShown: true,
+        }}
+      >
+        <Tab.Screen 
+        name="Home"
+        children={() => <HomeScreen/>}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons
+              name="library"
+              size={size}
+              color={color}
+            />
+          )
+        }}
+        />
+        <Tab.Screen 
+        name="Borrowed"
+        children={() => <BorrowedScreen/>}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons
+              name="book"
+              size={size}
+              color={color}
+            />
+          )
+        }}
+        />
+      </Tab.Navigator>
+    </NavigationContainer>   
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
