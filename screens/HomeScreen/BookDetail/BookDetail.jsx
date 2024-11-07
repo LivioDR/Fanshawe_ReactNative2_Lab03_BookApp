@@ -2,6 +2,8 @@ import { View, Text, Image, StyleSheet, Button, Platform } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import RatingAndReviews from "./RatingAndReviews/RatingAndReviews";
 import theme from "../../../config/theme";
+import { getNumberOfBorrowedBooks, toggleBorrowedById } from "../../../services/bookRequests";
+import { useState } from "react";
 
 const styles = StyleSheet.create({
     container: {
@@ -52,10 +54,41 @@ const styles = StyleSheet.create({
 })
 
 
-const BookDetail = () => {
+const BookDetail = ({setter}) => {
 
     const route = useRoute()
     const book = route.params.data
+
+    const [isBorrowed, setIsBorrowed] = useState(book.borrowed)
+    const [processingRequest, setProcessingRequest] = useState(false)
+    const [showModal, setShowModal] = useState(false)
+
+    const toggleBorrowed = async() => {
+        setProcessingRequest(true)
+        try{
+            const borrowed = await getNumberOfBorrowedBooks()
+            if(borrowed < 3){
+                await toggleBorrowedById(book.id, !book.borrowed)
+                setter(prev => {
+                    let booksData = [...prev]
+                    for(let i=0; i<booksData.length; i++){
+                        if(booksData[i].id === book.id){
+                            booksData[i].borrowed = !booksData[i].borrowed
+                        }
+                    }
+                    return booksData
+                })
+                setIsBorrowed(prev => !prev)
+            }
+            else{
+                // DISPLAY ALERT HERE
+            }
+        }
+        catch(e){
+            console.log(e)
+        }
+        setProcessingRequest(false)
+    }
 
     return(
         <View style={styles.container}>
@@ -74,7 +107,9 @@ const BookDetail = () => {
             <Text style={styles.description}>{book.desc}</Text>
             <View style={styles.btnWrapper}>
                 <Button
-                title={book.borrowed ? "Return" : "Borrow"}
+                onPress={toggleBorrowed}
+                disabled={processingRequest}
+                title={isBorrowed ? "Return" : "Borrow"}
                 color={Platform.OS === 'ios' ? "white" : "blue"}
                 />
             </View>

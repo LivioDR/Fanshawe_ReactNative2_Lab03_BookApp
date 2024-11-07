@@ -5,7 +5,7 @@ import BookList from "./BookList/BookList";
 import BookDetail from "./BookDetail/BookDetail";
 
 
-const HomeScreen = ({data}) => {
+const HomeScreen = ({data, setter}) => {
 
     const Stack = createNativeStackNavigator()
 
@@ -15,7 +15,7 @@ const HomeScreen = ({data}) => {
         <Stack.Navigator initialRouteName="Book List">
             <Stack.Screen
                 name="Book List"
-                children={() => <BookList data={data} />}
+                children={() => <BookList data={data}/>}
                 options={{
                     headerTitle: "Available books"
                 }}
@@ -23,7 +23,7 @@ const HomeScreen = ({data}) => {
 
             <Stack.Screen
                 name="Book Detail"
-                component={BookDetail}
+                children={() => <BookDetail setter={setter} />}
                 // Setting a different back button for iOS and leaving the default for Android
                 options={Platform.OS == 'ios' ? {
                     headerLeft: () => (
