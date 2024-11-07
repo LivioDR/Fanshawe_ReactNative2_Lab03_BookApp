@@ -127,7 +127,7 @@ export const placeholderData = [
         reviews: 298756,
         desc: "On the first day of May, 100 teenage boys meet for a race known as 'The Long Walk.' If you break the rules, you get three warnings. If you exceed your limit, what happens is absolutely terrifying.",
         borrowed: false,
-        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1553276854i/9014.jpg"
+        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1309212400i/9014.jpg"
     },
     {
         id: 14,
@@ -137,7 +137,7 @@ export const placeholderData = [
         reviews: 285634,
         desc: "On an entirely normal, beautiful fall day in Chester's Mill, Maine, the town is inexplicably and suddenly sealed off from the rest of the world by an invisible force field. Planes crash into it and fall from the sky in flaming wreckage, a gardener's hand is severed as 'the dome' comes down on it, people running errands in the neighboring town are divided from their families, and cars explode on impact.",
         borrowed: false,
-        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1511289986i/6320534.jpg"
+        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1511289992i/6320534.jpg"
     },
     {
         id: 15,
@@ -147,7 +147,7 @@ export const placeholderData = [
         reviews: 278934,
         desc: "Years ago, the haunting of the Overlook Hotel nearly broke young Dan Torrance's sanity, as his paranormal gift known as 'the shining' opened a door straight into hell. And even though Dan is all grown up, the ghosts of the Overlook—and his father's legacy of alcoholism and violence—kept him drifting for decades. Now, Dan has finally found some order in the chaos by working in a local hospice, earning the nickname 'Doctor Sleep' by secretly using his special abilities to comfort the dying and prepare them for the afterlife.",
         borrowed: false,
-        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1591457206i/16130549.jpg"
+        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1510335480i/16130549.jpg"
     },
     {
         id: 16,
@@ -157,7 +157,7 @@ export const placeholderData = [
         reviews: 265823,
         desc: "Andy McGee and Vicky Tomlinson participated in a drug experiment run by a veiled government agency known as The Shop. One year later, they marry. Two years after that, their little girl, Charlie, sets her teddy bear on fire by simply staring at it. Now that Charlie is eight, she doesn't start fires anymore. Her parents have taught her to control her pyrokinesis, the ability to set anything--toys, clothes, even people--aflame.",
         borrowed: false,
-        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1577113048i/233667.jpg"
+        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1592553161i/233667.jpg"
     },
     {
         id: 17,
@@ -167,7 +167,7 @@ export const placeholderData = [
         reviews: 258745,
         desc: "Leland Gaunt opens a new shop in Castle Rock called Needful Things. Anyone who enters his store finds the object of his or her lifelong dreams and desires: a prized baseball card, a healing amulet. In addition to a token payment, Gaunt requests that each person perform a little 'deed,' usually a seemingly innocent prank played on someone else from town. These practical jokes cascade out of control and soon the entire town is doing battle with itself.",
         borrowed: false,
-        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1254345409i/107291.jpg"
+        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1315767817i/107291.jpg"
     },
     {
         id: 18,
@@ -177,7 +177,7 @@ export const placeholderData = [
         reviews: 245678,
         desc: "Once, in a kingdom called Delain, there was a king with two sons. But only one of them would inherit the throne. Thus begins one of the most unique tales that master storyteller Stephen King has ever written—a sprawling fantasy of dark magic and the struggle for absolute power that utterly transforms the destinies of two brothers born into royalty.",
         borrowed: false,
-        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1523482298i/10611.jpg"
+        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1660526231i/10611.jpg"
     },
     {
         id: 19,
@@ -187,7 +187,7 @@ export const placeholderData = [
         reviews: 235689,
         desc: "Outside a peaceful town in central Maine, a monster is waiting. Cujo is a two-hundred-pound Saint Bernard, the best friend Brett Camber has ever had. One day Cujo chases a rabbit into a bolt-hole—a cave inhabited by sick bats. What happens to Cujo, how he becomes a horrifying vortex inescapably drawing in all the people around him makes for one of the most heart-stopping novels Stephen King has written.",
         borrowed: false,
-        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1523482298i/10603.jpg"
+        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1394208144i/10603.jpg"
     },
     {
         id: 20,
@@ -197,6 +197,6 @@ export const placeholderData = [
         reviews: 225467,
         desc: "Christine is a horror novel about a vintage automobile apparently possessed by supernatural forces. A love triangle involving 17-year-old Arnie Cunningham, his new girlfriend Christine (a 1958 Plymouth Fury), and his best friend Dennis Guilder forms the center of the story.",
         borrowed: false,
-        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1328302583i/10629.jpg"
+        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1663053062i/10629.jpg"
     }
 ]
