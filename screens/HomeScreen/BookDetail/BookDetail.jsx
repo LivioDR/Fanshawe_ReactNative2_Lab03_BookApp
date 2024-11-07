@@ -4,29 +4,9 @@ import RatingAndReviews from "./RatingAndReviews/RatingAndReviews";
 import theme from "../../../config/theme";
 import { getNumberOfBorrowedBooks, toggleBorrowedById } from "../../../services/bookRequests";
 import { useState } from "react";
+import NotAllowedModal from "./NotAllowedModal/NotAllowedModal";
 
 const styles = StyleSheet.create({
-    modal: {
-        view: {
-            display: 'flex',
-            flexDirection: 'column',
-            width: '100%',
-            height: '100%',
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: theme.bg,
-        },
-        title: {
-            fontSize: 24,
-            alignSelf: 'flex-start',
-            marginStart: '10%',
-        },
-        text: {
-            width: '80%',
-            textAlign: 'justify',
-            marginVertical: 10,
-        }
-    },
     container: {
         display: 'flex',
         flexDirection: 'column',
@@ -114,21 +94,7 @@ const BookDetail = ({setter}) => {
 
     return(
         <>
-        <Modal
-            visible={showModal}
-            transparent={false}
-            animationType="slide"
-        >
-            <View style={styles.modal.view}>
-                <Text style={styles.modal.title}>Oops...</Text>
-                <Text style={styles.modal.text}
-                >Only {MAX_BOOKS_ALLOWED} books are allowed to be borrowed at the same time. Please return one or more book if you want to borrow more.</Text>
-                <Button
-                    title="Dismiss"
-                    onPress={()=>{setShowModal(false)}}
-                />
-            </View>
-        </Modal>
+        <NotAllowedModal show={showModal} dismiss={()=>{setShowModal(false)}} maxAllowed={MAX_BOOKS_ALLOWED}/>
         <View style={styles.container}>
             <View style={styles.titleContainer}>
                 <Text style={styles.title}>{book.title}</Text>
