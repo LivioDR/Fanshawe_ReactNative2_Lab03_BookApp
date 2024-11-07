@@ -1,76 +1,44 @@
-import { View, Text, Image, StyleSheet, Button, Platform, Modal } from "react-native";
-import { useRoute } from "@react-navigation/native";
-import RatingAndReviews from "./RatingAndReviews/RatingAndReviews";
-import theme from "../../../config/theme";
-import { getNumberOfBorrowedBooks, toggleBorrowedById } from "../../../services/bookRequests";
+// React and components imports
 import { useState } from "react";
+import { View, Text, Image, Button, Platform } from "react-native";
 import NotAllowedModal from "./NotAllowedModal/NotAllowedModal";
+import RatingAndReviews from "./RatingAndReviews/RatingAndReviews";
 
-const styles = StyleSheet.create({
-    container: {
-        display: 'flex',
-        flexDirection: 'column',
-        width: '100%',
-        height: '100%',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        backgroundColor: theme.detailBg,
-    },
-    titleContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        width: '100%',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        padding: 20,
-    },
-    title: {
-        fontSize: 32,
-    },
-    author: {
-        fontSize: 16,
-        padding: 10,
-    },
-    imgAndRatingWrapper: {
-        display: 'flex',
-        flexDirection: 'column',
-        width: '100%',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    },
-    description: {
-        width: "90%",
-        paddingVertical: 5,
-        fontSize: 14,
-        textAlign: 'justify',
-    },
-    btnWrapper: {
-        marginBottom: 20,
-        marginTop: 10,
-        backgroundColor: 'blue',
-        width: 100,
-        borderRadius: 10,
-    }
+// Navigation imports
+import { useRoute } from "@react-navigation/native";
 
-})
+// Functions imports
+import { getNumberOfBorrowedBooks, toggleBorrowedById } from "../../../services/bookRequests";
+
+// Styling imports
+import styles from "./BookDetailStyles";
 
 
 const BookDetail = ({setter}) => {
 
+    // getting the data for the screen from the route params
     const route = useRoute()
     const book = route.params.data
+
+    // setting the max number of books allowed to be held at a time
     const MAX_BOOKS_ALLOWED = 3
 
+    // setting the state variables for UI render handling
     const [isBorrowed, setIsBorrowed] = useState(book.borrowed)
     const [processingRequest, setProcessingRequest] = useState(false)
     const [showModal, setShowModal] = useState(false)
 
+
+    // definition of the borrowing logic function
     const toggleBorrowed = async() => {
         setProcessingRequest(true)
         try{
+            // checks if the user is allowed to borrow more books
             const borrowed = await getNumberOfBorrowedBooks()
             if(borrowed < MAX_BOOKS_ALLOWED || isBorrowed){
+                // toggles the state in Firebase
                 await toggleBorrowedById(book.id, !book.borrowed)
+                // then updates the app state
                 setter(prev => {
                     let booksData = [...prev]
                     for(let i=0; i<booksData.length; i++){
@@ -80,9 +48,11 @@ const BookDetail = ({setter}) => {
                     }
                     return booksData
                 })
+                // and refreshes the detail page UI
                 setIsBorrowed(prev => !prev)
             }
             else{
+                // if the user is not allowed to borrow more books, displays the modal
                 setShowModal(true)
             }
         }
