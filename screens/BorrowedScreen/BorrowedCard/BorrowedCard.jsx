@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, Button } from "react-native";
 import theme from "../../../config/theme";
 
 
@@ -28,12 +28,9 @@ const styles = StyleSheet.create({
     image: {
 
     },
-    author: {
-        fontSize: 12,
-    },
 })
 
-const BorrowedCard = ({book}) => {
+const BorrowedCard = ({book, handleReturn}) => {
     return(
         <View style={styles.container}>
             <Text style={styles.title}>
@@ -45,9 +42,11 @@ const BorrowedCard = ({book}) => {
                 height={150}
                 style={styles.image}
             />
-            <Text style={styles.author}>
-                by {book.author}
-            </Text>
+            <Button
+            style={styles.returnBtn}
+            title="Return"
+            onPress={handleReturn}
+            />
         </View>
     )
 }

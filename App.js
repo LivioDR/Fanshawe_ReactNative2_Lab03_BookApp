@@ -57,7 +57,7 @@ export default function App() {
         />
         <Tab.Screen 
         name="Borrowed"
-        children={() => <BorrowedScreen books={books}/>}
+        children={() => <BorrowedScreen books={books} setter={setBooks}/>}
         options={{
           headerShown: true,
           headerTitle: "My books",
