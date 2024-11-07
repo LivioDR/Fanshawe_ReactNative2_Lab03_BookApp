@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, Button, Platform } from "react-native";
+import { View, Text, Image, StyleSheet, Button, Platform, Modal } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import RatingAndReviews from "./RatingAndReviews/RatingAndReviews";
 import theme from "../../../config/theme";
@@ -6,6 +6,27 @@ import { getNumberOfBorrowedBooks, toggleBorrowedById } from "../../../services/
 import { useState } from "react";
 
 const styles = StyleSheet.create({
+    modal: {
+        view: {
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%',
+            height: '100%',
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: theme.bg,
+        },
+        title: {
+            fontSize: 24,
+            alignSelf: 'flex-start',
+            marginStart: '10%',
+        },
+        text: {
+            width: '80%',
+            textAlign: 'justify',
+            marginVertical: 10,
+        }
+    },
     container: {
         display: 'flex',
         flexDirection: 'column',
@@ -58,6 +79,7 @@ const BookDetail = ({setter}) => {
 
     const route = useRoute()
     const book = route.params.data
+    const MAX_BOOKS_ALLOWED = 3
 
     const [isBorrowed, setIsBorrowed] = useState(book.borrowed)
     const [processingRequest, setProcessingRequest] = useState(false)
@@ -67,7 +89,7 @@ const BookDetail = ({setter}) => {
         setProcessingRequest(true)
         try{
             const borrowed = await getNumberOfBorrowedBooks()
-            if(borrowed < 3){
+            if(borrowed < MAX_BOOKS_ALLOWED || isBorrowed){
                 await toggleBorrowedById(book.id, !book.borrowed)
                 setter(prev => {
                     let booksData = [...prev]
@@ -81,7 +103,7 @@ const BookDetail = ({setter}) => {
                 setIsBorrowed(prev => !prev)
             }
             else{
-                // DISPLAY ALERT HERE
+                setShowModal(true)
             }
         }
         catch(e){
@@ -91,6 +113,22 @@ const BookDetail = ({setter}) => {
     }
 
     return(
+        <>
+        <Modal
+            visible={showModal}
+            transparent={false}
+            animationType="slide"
+        >
+            <View style={styles.modal.view}>
+                <Text style={styles.modal.title}>Oops...</Text>
+                <Text style={styles.modal.text}
+                >Only {MAX_BOOKS_ALLOWED} books are allowed to be borrowed at the same time. Please return one or more book if you want to borrow more.</Text>
+                <Button
+                    title="Dismiss"
+                    onPress={()=>{setShowModal(false)}}
+                />
+            </View>
+        </Modal>
         <View style={styles.container}>
             <View style={styles.titleContainer}>
                 <Text style={styles.title}>{book.title}</Text>
@@ -101,7 +139,7 @@ const BookDetail = ({setter}) => {
                     source={{uri: book.cover}}
                     width={150}
                     height={250}
-                />
+                    />
                 <RatingAndReviews data={book}/>
             </View>
             <Text style={styles.description}>{book.desc}</Text>
@@ -114,6 +152,7 @@ const BookDetail = ({setter}) => {
                 />
             </View>
         </View>
+        </>
     )
 }
 export default BookDetail
