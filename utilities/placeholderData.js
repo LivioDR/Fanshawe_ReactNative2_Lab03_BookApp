@@ -26,7 +26,7 @@ export const placeholderData = [
         rating: 4.34,
         reviews: 892456,
         desc: "This is the way the world ends: with a nanosecond of computer error in a Defense Department laboratory and a million casual contacts that form the links in a chain letter of death. And here is the bleak new world of the day after: a world stripped of its institutions and emptied of 99 percent of its people. A world in which a handful of panicky survivors choose sides -- or are chosen.",
-        borrowed: false,
+        borrowed: true,
         cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1213131305i/149267.jpg"
     },
     {
@@ -96,7 +96,7 @@ export const placeholderData = [
         rating: 3.92,
         reviews: 326054,
         desc: "In the first book of this series, Stephen King introduces readers to one of his most enigmatic heroes, Roland of Gilead, The Last Gunslinger. He is a haunting figure, a loner on a spellbinding journey into good and evil. In his desolate world, which frighteningly mirrors our own, Roland pursues The Man in Black, encounters an alluring woman named Alice, and begins a friendship with the Kid from Earth called Jake.",
-        borrowed: false,
+        borrowed: true,
         cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1554220416i/43615.jpg"
     },
     {

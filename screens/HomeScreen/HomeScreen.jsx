@@ -1,4 +1,5 @@
 import { View, Text, FlatList } from "react-native";
+import BookItem from "./BookItem/BookItem";
 
 
 const HomeScreen = ({data}) => {
@@ -10,7 +11,7 @@ const HomeScreen = ({data}) => {
                 data={data}
                 keyExtractor={book => book.id}
                 renderItem={book => 
-                    <Text>{book.item.title}</Text>
+                    <BookItem data={book.item}/>
                 }
             />
         </View>
