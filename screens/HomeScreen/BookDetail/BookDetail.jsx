@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, Button, Platform } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import RatingAndReviews from "./RatingAndReviews/RatingAndReviews";
 import theme from "../../../config/theme";
@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 32,
-        paddingBottom: 10,
     },
     author: {
         fontSize: 16,
@@ -37,8 +36,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     description: {
-        width: "80%",
+        width: "90%",
+        paddingVertical: 5,
+        fontSize: 14,
+        textAlign: 'justify',
     },
+    btnWrapper: {
+        marginBottom: 20,
+        marginTop: 10,
+        backgroundColor: 'blue',
+        width: 100,
+        borderRadius: 10,
+    }
 
 })
 
@@ -63,6 +72,12 @@ const BookDetail = () => {
                 <RatingAndReviews data={book}/>
             </View>
             <Text style={styles.description}>{book.desc}</Text>
+            <View style={styles.btnWrapper}>
+                <Button
+                title={book.borrowed ? "Return" : "Borrow"}
+                color={Platform.OS === 'ios' ? "white" : "blue"}
+                />
+            </View>
         </View>
     )
 }
