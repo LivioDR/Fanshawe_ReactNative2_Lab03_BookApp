@@ -1,5 +1,6 @@
 import { View } from "react-native";
 import BorrowedCard from "./BorrowedCard/BorrowedCard";
+import theme from "../../config/theme";
 
 const BorrowedScreen = ({books}) => {
     return(
@@ -10,6 +11,7 @@ const BorrowedScreen = ({books}) => {
             height: '100%',
             justifyContent: 'center',
             alignItems: 'center',
+            backgroundColor: theme.bg,
         }}>
             <View style={{
                 display: 'flex', 

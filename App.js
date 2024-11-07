@@ -45,6 +45,7 @@ export default function App() {
         children={() => <BorrowedScreen books={placeholderData}/>}
         options={{
           headerShown: true,
+          headerTitle: "My books",
           tabBarIcon: ({ color, size }) => (
             <Ionicons
               name="book"
