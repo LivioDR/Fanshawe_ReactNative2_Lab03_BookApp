@@ -9,6 +9,10 @@ import { NavigationContainer } from '@react-navigation/native';
 // Styling imports
 import Ionicons from '@expo/vector-icons/Ionicons';
 
+// Placeholder data
+// TODO: remove after linking app to Firebase
+import { placeholderData } from './utilities/placeholderData';
+
 
 export default function App() {
   
@@ -25,7 +29,7 @@ export default function App() {
       >
         <Tab.Screen 
         name="Home"
-        children={() => <HomeScreen/>}
+        children={() => <HomeScreen data={placeholderData}/>}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons
