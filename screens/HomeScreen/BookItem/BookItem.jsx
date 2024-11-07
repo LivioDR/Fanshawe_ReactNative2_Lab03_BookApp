@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet, TouchableHighlight } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 const styles = StyleSheet.create({
@@ -35,12 +36,18 @@ const styles = StyleSheet.create({
 
 
 const BookItem = ({data}) => {
+    
+    // Setting up the navigation to the detail page
+    const navigation = useNavigation()
+    const onTouch = () => {
+        navigation.navigate("Book Detail", {data})
+    }
 
     return(
         <TouchableHighlight
             style={styles.touchWrapper}
             underlayColor={'#D7AE47'}
-            onPress={()=>console.log(data.title)}
+            onPress={onTouch}
         >
             <View style={styles.container}>
                 <>
