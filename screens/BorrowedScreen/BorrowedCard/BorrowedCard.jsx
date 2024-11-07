@@ -22,13 +22,14 @@ const styles = StyleSheet.create({
         borderWidth: 1,
     },
     title: {
-        fontSize: 18,
+        fontSize: 16,
+        textAlign: 'center',
     },
     image: {
 
     },
     author: {
-        fontSize: 16,
+        fontSize: 12,
     },
 })
 
