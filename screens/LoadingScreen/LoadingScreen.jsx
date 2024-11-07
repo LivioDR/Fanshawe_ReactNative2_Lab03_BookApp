@@ -1,6 +1,5 @@
 import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
 
-// TODO: set styles for this screen
 const styles = StyleSheet.create({
     container: {
         display: 'flex',
