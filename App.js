@@ -24,7 +24,7 @@ export default function App() {
       <Tab.Navigator
         initialRouteName="Home"
         screenOptions={{
-          headerShown: true,
+          headerShown: false,
         }}
       >
         <Tab.Screen 
