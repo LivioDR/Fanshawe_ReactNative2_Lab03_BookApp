@@ -47,7 +47,7 @@ export const placeholderData = [
         reviews: 458923,
         desc: "When Dr. Louis Creed takes a new job and moves his family to the idyllic rural town of Ludlow, Maine, this new beginning seems too good to be true. Yet despite Ludlow's tranquility, an undercurrent of danger exists here. Those trucks on the road outside the Creed's beautiful old home travel by just a little too quickly, for one thing...as is evidenced by the makeshift graveyard in the nearby woods where generations of children have buried their beloved pets.",
         borrowed: false,
-        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1531876224i/33124137.jpg"
+        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1480069533i/33124137.jpg"
     },
     {
         id: 6,
@@ -57,7 +57,7 @@ export const placeholderData = [
         reviews: 428756,
         desc: "Paul Sheldon. He's a bestselling novelist who has finally met his biggest fan. Her name is Annie Wilkes and she is more than a rabid reader - she is Paul's nurse, tending his shattered body after an automobile accident. But she is also his captor, keeping him prisoner in her isolated house.",
         borrowed: false,
-        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1554220416i/10614.jpg"
+        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1554220401i/10614.jpg"
     },
     {
         id: 7,
@@ -67,7 +67,7 @@ export const placeholderData = [
         reviews: 358942,
         desc: "Johnny Smith awakens from a five-year coma after his car accident and discovers that he can see people's futures and pasts when he touches them. Many consider his talent a gift; Johnny feels cursed. His fiancée married another man during his coma and people clamor for him to solve their problems.",
         borrowed: false,
-        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1353277730i/11611.jpg"
+        cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1283509622i/11573.jpg"
     },
     {
         id: 8,
